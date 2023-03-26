@@ -8,21 +8,26 @@
 # db/seeds.rb
 
 # create powers
-Power.create(name: "super strength", description: "gives the wielder super-human strengths")
-Power.create(name: "flight", description: "gives the wielder the ability to fly through the skies at supersonic speed")
-Power.create(name: "teleportation", description: "gives the wielder the ability to teleport to any location instantly")
+puts 'seed'
+10.times do
+    Power.create(
+       name: Faker::Superhero.power,
+       description: Faker::TvShows::BigBangTheory.quote
+    )
+end
 
-# create heroes
-Hero.create(name: "Kamala Khan", super_name: "Ms. Marvel")
-Hero.create(name: "Doreen Green", super_name: "Squirrel Girl")
-Hero.create(name: "Gwen Stacy", super_name: "Spider-Gwen")
+10.times do
+    HeroPower.create(
+       strength: ['Weak', 'Average','Strong'].sample,
+       hero_id: rand(1..5),
+       power_id: rand(1..10)
+    )
+end
 
-# create hero powers
-HeroPower.create(strength: "Average", power_id: 1, hero_id: 1)
-HeroPower.create(strength: "Strong", power_id: 2, hero_id: 1)
-HeroPower.create(strength: "Weak", power_id: 3, hero_id: 1)
-HeroPower.create(strength: "Average", power_id: 1, hero_id: 2)
-HeroPower.create(strength: "Strong", power_id: 2, hero_id: 2)
-HeroPower.create(strength: "Weak", power_id: 3, hero_id: 2)
-HeroPower.create(strength: "Average", power_id: 1, hero_id: 3)
-HeroPower.create(strength: "Strong", power_id: 2, hero_id: 3)
+5.times do
+    Hero.create(
+       name: Faker::Superhero.name,
+        super_name: Faker::Superhero.descriptor
+    )
+end
+puts 'end'
