@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :heros ,only:[:index,:show,]
+  resources :heroes ,only:[:index,:show,]
   resources :powers ,only:[:index,:show,:update,:create]
   get '/hero_powers', to: 'hero_powers#index'
   post '/hero_powers', to: 'hero_powers#create'

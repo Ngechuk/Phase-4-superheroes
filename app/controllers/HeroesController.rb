@@ -3,8 +3,8 @@ class HeroesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :not_found_response
 
     def index
-        heroes=Hero.all
-        render json:heroes, status: :ok
+        heros=Hero.all
+        render json:heros, status: :ok
     end
 
     def show
