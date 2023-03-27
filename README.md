@@ -7,7 +7,7 @@
 git clone git@github.com:Ngechuk/Phase-4-superheroes.git
 cd superheroes
 
-[Link to the deployed site](https://rails-pizza.onrender.com)
+[Link to the deployed site](https://superheroes-3su8.onrender.com)
 Install the dependencies:
 
 bash
